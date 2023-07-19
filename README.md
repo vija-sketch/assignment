@@ -10,8 +10,8 @@ This project is bascially on two different usecases
 - Download the code or clone from github by executing the below command
         git clone https://github.com/vija-sketch/assignment.git
 - validate the infra template
-     ```aws cloudformation validate-template --template-body <filepath>
-        In our-case our path will be `assignment/usecase1/infra.yml` ```
+     ```aws cloudformation validate-template --template-body <filepath>```
+     ```In our-case our path will be `assignment/usecase1/infra.yml` ```
 - After successful template verification lets create stack using our template
         ```aws cloudformation create-stack --stack-name assignment-usecae1 --template-body assignment/usecase1/infra.yml```
 - Check if the stack we created via template is completed successfully
