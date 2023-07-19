@@ -7,7 +7,7 @@
    -  In ourcase we have the Cloudformation template or script available i.e `infra.yml`  
 
 ## Steps to be followed if you want to deploy the usecase - 1 
-    - Download the code or clone from github by executing the below command
+- Download the code or clone from github by executing the below command
         git clone https://github.com/vija-sketch/assignment.git
     - validate the infra template
         aws cloudformation validate-template --template-body <filepath>
