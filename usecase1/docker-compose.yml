@@ -1,0 +1,60 @@
+version: "3.9"
+services:
+  healthtest:
+    build:
+      dockerfile: health/Dockerfile
+    container_name: healttest
+    restart: always
+    expose:
+      - 80
+    ports:
+      - 80:80
+    networks:
+      local_app_net:
+        ipv4_address: 172.16.239.10
+
+  whotest:
+    build:
+      dockerfile: who/Dockerfile
+    container_name: whotest
+    restart: always
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    networks:
+      local_app_net:
+        ipv4_address: 172.16.239.11
+
+  createtest:
+    build:
+      dockerfile: create/Dockerfile
+    container_name: createtest
+    restart: always
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
+    networks:
+      local_app_net:
+        ipv4_address: 172.16.239.12
+  
+  readtest:
+    build:
+      dockerfile: read/Dockerfile
+    container_name: readtesr
+    restart: always
+    expose:
+      - 8082
+    ports:
+      - 8082:8082
+    networks:
+      local_app_net:
+        ipv4_address: 172.16.239.12
+networks:
+  local_app_net:
+    name: test_network
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.239.0/24"
