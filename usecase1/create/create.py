@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/create', methods = ['POST'])
 def create():
-	cmd = "./test.sh"
+	cmd = "bin bash assignment/usecase1/test.sh"
 	returned_value = subprocess.call(cmd, shell=True)
 	print('results:', returned_value)
 	print('error:', false)

@@ -5,10 +5,10 @@ app = Flask(__name__)
 
 @app.route('/read', methods = ['GET'])
 def reads():
-	path = 'test.txt'
+	path = 'assignment/usecase1/test.txt'
 	check_file = os.path.isfile(path)
 	if check_file == true:
-		cmd = "cat test.txt"
+		cmd = "cat assignment/usecase1/test.txt"
 		returned_value = subprocess.call(cmd, shell=True)
 		print('results:', returned_value)
 		print('error:', false)
